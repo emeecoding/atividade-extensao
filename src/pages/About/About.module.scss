@@ -1,0 +1,19 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .textAbout {
+    max-width: 50%;
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
