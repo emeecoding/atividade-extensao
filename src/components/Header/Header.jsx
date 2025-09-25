@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import styles from "./Header.module.scss";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,26 +28,11 @@ function Header() {
           <li>
             <a href="#">Sobre</a>
           </li>
-          <li className={styles.dropdown}>
-            <a href="#">Cursos</a>
-            <MdKeyboardArrowDown className={styles.iconArrow} />
-            <ul className={styles.dropdownMenu}>
-              <li>
-                <a href="#">Informática</a>
-              </li>
-              <li>
-                <a href="#">Inglês</a>
-              </li>
-              <li>
-                <a href="#">Educação Financeira</a>
-              </li>
-              <li>
-                <a href="#">ENEM</a>
-              </li>
-            </ul>
+          <li>
+            <a href="">Cursos</a>
           </li>
-          <li className={styles.contato}>
-            <a href="#">Contato</a>
+          <li>
+            <a href="">Sobre</a>
           </li>
         </ul>
       </nav>

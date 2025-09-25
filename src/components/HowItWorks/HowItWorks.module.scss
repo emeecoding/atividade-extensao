@@ -16,6 +16,8 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
     text-align: center;
+    opacity: 0;
+    transform: scale(0.5);
 
     &:hover {
       transform: translateY(-5px);

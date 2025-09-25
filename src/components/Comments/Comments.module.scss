@@ -12,6 +12,9 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: scale(0.5);
+
 
   &:hover {
     transform: translateY(-5px);

@@ -1,10 +1,19 @@
+import styles from "../Home/Home.module.scss";
+
+import CountUp from "react-countup";
+
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Banner from "../../components/Banner/Banner";
 import { Comment } from "../../components/Comments/Comments";
 import { Impact } from "../../components/Impact/Impact";
 import { About } from "../../components/About/About";
 import { HowItWorks } from "../../components/HowItWorks/HowItWorks";
+import ExplainerVideo from "../../components/ExplainerVideo/ExplainerVideo";
+import { StudentGallery } from "../../components/StudentGallery/StudentGallery";
 
-import styles from "../Home/Home.module.scss";
 import student1 from "../../assets/images/student1.jpg";
 import student2 from "../../assets/images/student2.jpg";
 import student3 from "../../assets/images/student3.jpg";
@@ -20,9 +29,34 @@ import batePapo from "../../assets/images/bate-papo.png";
 import cursoImage from "../../assets/images/curso.png";
 import AlvoImage from "../../assets/images/alvo-de-dardos.png";
 import smartphoneImage from "../../assets/images/smartphone-and-laptop.png";
-import ExplainerVideo from "../../components/ExplainerVideo/ExplainerVideo";
+import alunosGallery from "../../assets/images/alunos.webp";
+import FormularioInteresse from "../../components/FormularioInteresse/FormularioInteresse";
+import Footer from "../../components/Footer/Footer";
+import GaleriaIlustrada from "../../components/GaleriaIlustrada/GaleriaIlustrada";
+import QuemSomos from "../../components/QuemSomos/QuemSomos";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
+  const sectionTitleRef = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      sectionTitleRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionTitleRef.current,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
   return (
     <main>
       <a
@@ -44,7 +78,7 @@ function Home() {
         <ExplainerVideo />
       </section>
       <section className={styles["impact-section-home"]}>
-        <h2>O que Estamos Construindo</h2>
+        <h2 ref={sectionTitleRef}>O que Estamos Construindo</h2>
         <div className={styles["container-impact"]}>
           <Impact
             imageImpact={studentIcon}
@@ -62,7 +96,7 @@ function Home() {
             imageImpact={escola}
             number="+10"
             emphasis="Escolas Participantes"
-            caption="Instituições públicas engajadas na construção de um futuro mais justo e conectado.."
+            caption="Instituições públicas engajadas na construção de um futuro mais justo e conectado."
           />
           <Impact
             imageImpact={balaoDeFala}
@@ -73,7 +107,7 @@ function Home() {
           <Impact
             imageImpact={localizacaoImage}
             number="+5.000"
-            emphasis="Feedbacks Recebidos"
+            emphasis="Acessos Registrados"
             caption="Milhares de acessos que mostram o alcance e o interesse por uma educação mais inclusiva."
           />
         </div>
@@ -119,12 +153,13 @@ function Home() {
           <Comment
             image={student5}
             name="Vitória"
-            location="Recife-PE"
+            location="Recife, PE"
             text="A plataforma é leve, funciona até no meu celular antigo. Isso faz toda a diferença pra mim."
             time="08:00"
           />
         </div>
       </section>
+
       <section className={styles["how-it-works-section"]}>
         <div className={styles["title-wrapper"]}>
           <h4 className={styles["how-title"]}>Como Funciona</h4>
@@ -147,8 +182,13 @@ function Home() {
           />
         </div>
       </section>
-      <section className={styles["about-wrapper"]}>
-        <About />
+      <QuemSomos />
+      <section></section>
+      <section className={styles["section-interesse"]}>
+        <FormularioInteresse />
+      </section>
+      <section>
+        <Footer />
       </section>
     </main>
   );
