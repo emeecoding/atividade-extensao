@@ -21,7 +21,6 @@
       text-align: center;
       color: #fff;
       font-size: 4em;
-      transform: translateX(-500px);
       opacity: 0;
     }
 
@@ -31,11 +30,10 @@
       font-size: 17px;
       line-height: 1.5rem;
       width: 70%;
-      transform: translateX(-500px);
       opacity: 0;
     }
 
-    .btn {
+    .button-start {
       background-color: transparent;
       border: 2px solid #fff;
       color: #fff;
@@ -45,6 +43,7 @@
       font-size: 20px;
       font-family: Montserrat;
       transition: 0.3s ease;
+      opacity: 0;
     }
 
     .btn:hover {
@@ -75,8 +74,9 @@
         padding: 20px;
       }
 
-      .btn {
-        padding: 10px 20px;
+      .button-start {
+        font-size: 15px;
+        padding: 15px;
       }
     }
   }

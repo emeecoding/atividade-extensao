@@ -1,7 +1,5 @@
 import styles from "../Home/Home.module.scss";
 
-import CountUp from "react-countup";
-
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +10,6 @@ import { Impact } from "../../components/Impact/Impact";
 import { About } from "../../components/About/About";
 import { HowItWorks } from "../../components/HowItWorks/HowItWorks";
 import ExplainerVideo from "../../components/ExplainerVideo/ExplainerVideo";
-import { StudentGallery } from "../../components/StudentGallery/StudentGallery";
 
 import student1 from "../../assets/images/student1.jpg";
 import student2 from "../../assets/images/student2.jpg";
@@ -29,16 +26,15 @@ import batePapo from "../../assets/images/bate-papo.png";
 import cursoImage from "../../assets/images/curso.png";
 import AlvoImage from "../../assets/images/alvo-de-dardos.png";
 import smartphoneImage from "../../assets/images/smartphone-and-laptop.png";
-import alunosGallery from "../../assets/images/alunos.webp";
 import FormularioInteresse from "../../components/FormularioInteresse/FormularioInteresse";
 import Footer from "../../components/Footer/Footer";
-import GaleriaIlustrada from "../../components/GaleriaIlustrada/GaleriaIlustrada";
 import QuemSomos from "../../components/QuemSomos/QuemSomos";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   const sectionTitleRef = useRef(null);
+  const titleComment = useRef(null);
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -54,6 +50,15 @@ function Home() {
           start: "top 90%",
           toggleActions: "play none none none",
         },
+      }
+    );
+
+    gsap.fromTo(
+      titleComment.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
       }
     );
   }, []);
@@ -78,7 +83,9 @@ function Home() {
         <ExplainerVideo />
       </section>
       <section className={styles["impact-section-home"]}>
-        <h2 ref={sectionTitleRef}>O que Estamos Construindo</h2>
+        <h2 className={styles["title-impact"]} ref={sectionTitleRef}>
+          O que Estamos Construindo
+        </h2>
         <div className={styles["container-impact"]}>
           <Impact
             imageImpact={studentIcon}
@@ -113,7 +120,9 @@ function Home() {
         </div>
       </section>
       <section className={styles["comments-section"]}>
-        <h3>O que os alunos estão dizendo</h3>
+        <h3 ref={titleComment} className={styles["title-comment-students"]}>
+          O que os alunos estão dizendo
+        </h3>
         <div className={styles["container-comments"]}>
           <Comment
             image={student1}

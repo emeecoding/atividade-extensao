@@ -49,3 +49,38 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .impactSection {
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 350px;
+    .impact-card {
+      width: 300px;
+      transform: translateX(0); // remove deslocamento lateral
+
+      .impact-icon {
+        margin-bottom: 10px;
+
+        .impact-image {
+          width: 80px;
+        }
+      }
+
+      .number {
+        font-size: 2em;
+      }
+
+      .impact-emphasis {
+        font-size: 1em;
+      }
+
+      .title-impact {
+        font-size: 0.5em;
+      }
+    }
+  }
+}

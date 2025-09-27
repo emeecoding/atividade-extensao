@@ -15,7 +15,6 @@
   opacity: 0;
   transform: scale(0.5);
 
-
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -58,5 +57,37 @@
     color: #8d8c8c;
     font-size: 0.85rem;
     margin-top: 1rem;
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .commentCard {
+    min-height: auto;
+    padding: 15px;
+
+    .profileImage {
+      width: 70px;
+      height: 70px;
+      border-width: 4px;
+    }
+
+    .student-name {
+      font-size: 1rem;
+    }
+
+    .comment-text {
+      font-size: 0.9rem;
+    }
+
+    .time {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .commentCard {
+    max-width: 100%; // um card por linha
   }
 }

@@ -1,11 +1,13 @@
 .how-section {
   width: 100%;
   text-align: center;
+  padding: 40px 20px;
 
   .how-steps {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
   }
 
   .step {
@@ -42,14 +44,32 @@
   }
 
   @media (max-width: 768px) {
+    padding: 30px 10px;
+
     .how-steps {
       flex-direction: column;
       align-items: center;
+      gap: 15px;
     }
 
     .step {
       width: 100%;
-      max-width: 320px;
+      max-width: 100%;
+      padding: 25px 15px;
+      transform: scale(1); // remove escala para evitar corte
+      opacity: 1; // garantir visibilidade
+
+      img {
+        width: 40px;
+      }
+
+      .step-title {
+        font-size: 1.2em;
+      }
+
+      p {
+        font-size: 0.95em;
+      }
     }
   }
 }

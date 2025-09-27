@@ -37,18 +37,20 @@ export function Comment({ image, name, location, text, time }) {
   }, []);
 
   return (
-    <div className={styles.commentCard} ref={cardRef}>
-      <img
-        src={image}
-        alt={`Foto de ${name}`}
-        className={styles.profileImage}
-      />
-      <div>
-        <h3 className={styles["student-name"]}>{name}</h3>
-        <span className={styles["student-location"]}>{location}</span>
+    <section className={styles["section-comment"]}>
+      <div className={styles.commentCard} ref={cardRef}>
+        <img
+          src={image}
+          alt={`Foto de ${name}`}
+          className={styles.profileImage}
+        />
+        <div>
+          <h3 className={styles["student-name"]}>{name}</h3>
+          <span className={styles["student-location"]}>{location}</span>
+        </div>
+        <p className={styles["comment-text"]}>{text}</p>
+        <span className={styles.time}>{time}</span>
       </div>
-      <p className={styles["comment-text"]}>{text}</p>
-      <span className={styles.time}>{time}</span>
-    </div>
+    </section>
   );
 }

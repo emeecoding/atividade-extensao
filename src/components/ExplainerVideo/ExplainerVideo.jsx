@@ -31,15 +31,15 @@ const ExplainerVideo = () => {
     tl.fromTo(
       videoDescription.current,
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
       // "+=0.2"
     );
 
     tl.fromTo(
       videoWrapper.current,
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
-      // "+=0.2"
+      { y: 0, opacity: 1, duration: 0.3 },
+      "-=0.2" // começa 0.2s antes da anterior terminar
     );
 
     return () => {

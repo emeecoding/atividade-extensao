@@ -59,7 +59,7 @@ export function Impact(props) {
           )}
         </h1>
         <h2 className={styles["impact-emphasis"]}>{props.emphasis}</h2>
-        <p className={styles["title-impact"]}>{props.caption}</p>
+        <p className={styles["text-impact"]}>{props.caption}</p>
       </div>
     </div>
   );

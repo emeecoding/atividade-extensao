@@ -11,6 +11,7 @@
     transform: scale(1.1);
   }
 }
+
 .banner-section {
   background: linear-gradient(to bottom, #2f35cd, #7d1abd);
   border-radius: 0 0 100px 100px;
@@ -34,8 +35,23 @@
   .container-impact {
     display: flex;
     justify-content: center;
-    width: 55%;
     flex-wrap: wrap;
+    gap: 10px;
+    width: 60%;
+  }
+
+  .card-impact {
+    background-color: #fff;
+    width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 }
 
@@ -44,7 +60,7 @@
 }
 
 .digital-inclusion {
-  padding: 40px; // opcional, para dar espaço interno
+  padding: 40px;
 }
 
 .comments-section {
@@ -56,19 +72,25 @@
   justify-content: center;
   background-color: #f9f9f9;
 
-  h3 {
-    color: #0a0f40;
-    font-size: 2.5rem;
+  .title-comment-students {
+    font-size: 2.2rem;
   }
-
   .container-comments {
     margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 50%;
     gap: 2.5rem;
+    width: 80%;
+  }
+
+  .comment-card {
+    background-color: #fff;
+    width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -80,20 +102,10 @@
   gap: 5rem;
 
   .how-title {
-    font-size: 2.4em;
+    font-size: 2.2em;
     color: #000;
     font-weight: 700;
     position: relative;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      background-color: #000;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
   }
 
   .how-it-works-container {
@@ -101,32 +113,100 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .how-card {
+    background-color: #fff;
+    width: 280px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
   }
 }
 
-.about-wrapper {
-  background-color: red;
+
+.section-interesse {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   height: 100vh;
-  margin-top: 150px;
+  padding: 40px;
 }
 
 @media (max-width: 768px) {
   .icon-bate-papo-fixed {
     right: 20px;
-    width: 30px;
+    bottom: 20px;
+    width: 40px;
   }
 
   .banner-section {
     border-radius: 0 0 20px 20px;
   }
-}
 
-.section-interesse {
-  display: flex;
-  align-items: center;
-  height: 100vh;
+  .impact-section-home {
+    gap: 2rem;
+    border-radius: 0;
+    padding: 20px;
+
+    .title-impact {
+      font-size: 2.2rem;
+      margin-top: 1rem;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .container-impact {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .card-impact {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  .section-gallery {
+    height: auto;
+    padding: 20px;
+  }
+
+  .digital-inclusion {
+    padding: 20px;
+  }
+
+  .comments-section {
+    height: auto;
+    padding: 20px;
+
+    h3 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .container-comments {
+      width: 100%;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .comment-card {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+
+
+
+  .section-interesse {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 15px;
+  }
 }

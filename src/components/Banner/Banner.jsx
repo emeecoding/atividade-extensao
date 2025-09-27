@@ -2,27 +2,31 @@ import styles from "../../components/Banner/Banner.module.scss";
 import { gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
 
-
 const Banner = () => {
   const titleRef = useRef(null);
   const textRef = useRef(null);
+  const buttonStart = useRef(null);
 
   useLayoutEffect(() => {
     const tl = gsap.timeline();
 
-    tl.to(titleRef.current, {
-      x: 0,
-      opacity: 1,
-      duration: 1.5,
-      ease: "power1.out",
-    });
-
-    tl.to(textRef.current, {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power1.out",
-    });
+    tl.fromTo(
+      titleRef.current,
+      { x: -500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: "power2.out" }
+    );
+    tl.fromTo(
+      textRef.current,
+      { x: -500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: "power2.out" },
+      "-=0.5"
+    );
+    tl.fromTo(
+      buttonStart.current,
+      { x: 500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: "elastic.out(1, 0.3)" },
+      "-=0.3"
+    );
   }, []);
 
   return (
@@ -39,7 +43,7 @@ const Banner = () => {
           seu potencial, conquistar oportunidades e construir um futuro mais
           justo. Aqui, inclusão digital é mais que acesso — é transformação.
         </p>
-        <a href="#cursos" className={styles.btn}>
+        <a href="#cursos" className={styles["button-start"]} ref={buttonStart}>
           Começar agora
         </a>
       </div>
