@@ -1,35 +1,38 @@
 .banner {
   display: flex;
   justify-content: center;
-  align-items: flex-start; // alinha no topo
-  padding-top: 10vh; // empurra o conteúdo um pouco pra baixo
+  align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  box-sizing: border-box;
+  padding: 2rem;
 
   .content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 60%;
-    height: 500px;
+    max-width: 100%;
+    width: 100%;
     gap: 2rem;
+    padding: 1rem;
 
     .title {
       font-family: Montserrat;
       text-align: center;
       color: #fff;
-      font-size: 4em;
+      font-size: clamp(2rem, 5vw, 4rem);
       opacity: 0;
+      max-width: 1200px;
     }
 
     .text {
       color: #fff;
       text-align: center;
-      font-size: 17px;
-      line-height: 1.5rem;
-      width: 70%;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 2rem;
+      max-width: 1200px;
       opacity: 0;
     }
 
@@ -37,46 +40,80 @@
       background-color: transparent;
       border: 2px solid #fff;
       color: #fff;
-      border-radius: 30px;
-      padding: 15px 70px;
+      border-radius: 50px;
+      padding: 1rem 3rem;
       text-decoration: none;
-      font-size: 20px;
+      font-size: clamp(0.9rem, 2vw, 1.25rem);
       font-family: Montserrat;
-      transition: 0.3s ease;
-      opacity: 0;
+      animation: pulse 2s infinite ease-in-out;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 1px 1px 10px 1px #fff;
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.85;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   }
 }
 
-@media (max-width: 768px) {
+// Telas médias (tablets)
+@media (max-width: 1024px) {
   .banner {
     .content {
-      max-width: 100%;
-      display: flex;
-      gap: 1rem;
+      gap: 2rem;
 
       .title {
-        font-family: Montserrat;
-        text-align: center;
-        color: #fff;
-        font-size: 2em;
-        margin-top: 100px;
-        padding: 20px;
+        font-size: clamp(1.5rem, 4vw, 3rem);
       }
 
       .text {
-        width: 100%;
-        padding: 20px;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        line-height: 1.5rem;
+        max-width: 10;
       }
 
       .button-start {
-        font-size: 15px;
-        padding: 15px;
+        padding: 0.8rem 2rem;
+      }
+    }
+  }
+}
+
+// Telas pequenas (celulares)
+@media (max-width: 600px) {
+  .banner {
+    padding: 1rem;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+
+      .title {
+        font-size: clamp(2rem, 5vw, 2rem);
+        padding-inline: 3rem;
+        width: 450px;
+      }
+
+      .text {
+        padding: 1rem;
+      }
+
+      .button-start {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
       }
     }
   }

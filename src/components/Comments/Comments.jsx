@@ -5,7 +5,7 @@ import styles from "../Comments/Comments.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function Comment({ image, name, location, text, time }) {
+export function Comment({ name, location, text, time }) {
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -39,11 +39,6 @@ export function Comment({ image, name, location, text, time }) {
   return (
     <section className={styles["section-comment"]}>
       <div className={styles.commentCard} ref={cardRef}>
-        <img
-          src={image}
-          alt={`Foto de ${name}`}
-          className={styles.profileImage}
-        />
         <div>
           <h3 className={styles["student-name"]}>{name}</h3>
           <span className={styles["student-location"]}>{location}</span>

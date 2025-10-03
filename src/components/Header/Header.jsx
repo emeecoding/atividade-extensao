@@ -5,16 +5,24 @@ import { TfiAlignJustify } from "react-icons/tfi";
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 90);
-      setMenuOpen(false); // fecha o menu ao rolar
+      setMenuOpen(false);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const menuItems = [
+    { label: "Início", id: "home" },
+    { label: "Sobre", id: "about" },
+    { label: "Cursos", id: "courses" },
+    { label: "Contato", id: "contact" },
+  ];
 
   return (
     <>
@@ -23,18 +31,24 @@ function Header() {
 
         <nav className={styles.nav}>
           <ul>
-            <li className={styles.active}>
-              <a href="#">Início</a>
-            </li>
-            <li>
-              <a href="#">Sobre</a>
-            </li>
-            <li>
-              <a href="#">Cursos</a>
-            </li>
-            <li>
-              <a href="#">Contato</a>
-            </li>
+            {menuItems.map((item, index) => (
+              <li
+                key={item.label}
+                className={index === activeIndex ? styles.active : ""}
+                onClick={() => setActiveIndex(index)}
+              >
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const section = document.getElementById(item.id);
+                    if (section) section.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -49,22 +63,22 @@ function Header() {
         <aside className={styles.dropdownMenu}>
           <ul>
             <li>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              <a href="#home" onClick={() => setMenuOpen(false)}>
                 Início
               </a>
             </li>
             <li>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              <a href="#about" onClick={() => setMenuOpen(false)}>
                 Sobre
               </a>
             </li>
             <li>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              <a href="#courses" onClick={() => setMenuOpen(false)}>
                 Cursos
               </a>
             </li>
             <li>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>
                 Contato
               </a>
             </li>

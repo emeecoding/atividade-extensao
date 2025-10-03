@@ -1,0 +1,58 @@
+.accordion {
+  max-width: 1000px;
+  margin: 20px auto;
+  border-bottom: 1px solid #ccc;
+  padding: 30px;
+}
+
+.accordionButton {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+
+  .toggle-icon {
+    font-size: 30px;
+  }
+}
+
+.accordionContent {
+  padding: 12px;
+  color: #333;
+  transition: 0.3 ease;
+  font-family: Montserrat;
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    max-width: 1000px;
+    margin: 20px auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .accordionButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 13px;
+
+    .toggle-icon {
+      font-size: 20px;
+    }
+  }
+
+  .accordionContent {
+    padding: 12px;
+    color: #333;
+    transition: 0.3 ease;
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 12px;
+  }
+}

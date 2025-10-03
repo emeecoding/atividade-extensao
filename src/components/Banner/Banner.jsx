@@ -43,7 +43,7 @@ const Banner = () => {
           seu potencial, conquistar oportunidades e construir um futuro mais
           justo. Aqui, inclusão digital é mais que acesso — é transformação.
         </p>
-        <a href="#cursos" className={styles["button-start"]} ref={buttonStart}>
+        <a href="#courses" className={styles["button-start"]} ref={buttonStart}>
           Começar agora
         </a>
       </div>
