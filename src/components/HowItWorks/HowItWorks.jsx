@@ -24,7 +24,7 @@ export function HowItWorks({ stepIcon, stepTitle, stepText }) {
         scrollTrigger: {
           trigger: el,
           start: "top 80%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       });
 

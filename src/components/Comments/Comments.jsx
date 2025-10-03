@@ -24,7 +24,7 @@ export function Comment({ name, location, text, time }) {
         scrollTrigger: {
           trigger: el,
           start: "top 80%",
-          toggleActions: "play reverse play reverse", // entra e sai suavemente
+          toggleActions: "play none none reverse",
         },
       });
 

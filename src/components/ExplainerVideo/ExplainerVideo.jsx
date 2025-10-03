@@ -17,7 +17,7 @@ const ExplainerVideo = () => {
       scrollTrigger: {
         trigger: videoContentRef.current,
         start: "top 90%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none reverse",
         markers: false,
       },
     });

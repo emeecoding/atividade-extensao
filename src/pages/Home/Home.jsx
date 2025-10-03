@@ -51,7 +51,6 @@ function Home() {
         scrollTrigger: {
           trigger: sectionTitleRef.current,
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -66,7 +65,7 @@ function Home() {
         scrollTrigger: {
           trigger: titleComment.current,
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
         },
       }
     );
@@ -82,7 +81,7 @@ function Home() {
         scrollTrigger: {
           trigger: titleCourses.current,
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -91,7 +90,8 @@ function Home() {
   return (
     <main>
       <a
-        href="https://wa.me/5581999999999"
+        href="https://wa.me/5581984589196
+"
         target="_blank"
         rel="noopener noreferrer"
       >

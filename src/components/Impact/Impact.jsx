@@ -19,7 +19,7 @@ export function Impact(props) {
       scrollTrigger: {
         trigger: impactCard.current,
         start: "top 90%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none reverse",
       },
     });
 

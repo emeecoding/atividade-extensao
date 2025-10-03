@@ -24,7 +24,7 @@ const Title = ({ children, level = 1, className = "" }) => {
         scrollTrigger: {
           trigger: el,
           start: "top 80%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       }
     );

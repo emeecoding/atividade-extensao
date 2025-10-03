@@ -31,7 +31,7 @@ const Accordion = ({ question, answer }) => {
         scrollTrigger: {
           trigger: accordion.current,
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       }
     );
